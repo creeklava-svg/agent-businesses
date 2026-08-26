@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Iowa Grain Market Feed — Your Local Elevator Bid, Every Morning at 6AM</title>
+<meta name="description" content="Daily Iowa corn/soy cash bids, futures, local basis, delivery alerts, and target-price emails — the official USDA data, delivered to your inbox at 6AM. $19/mo.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a0a0f;--card:#12121a;--purple:#7c3aed;--emerald:#10b981;--text:#e8e8ef;--muted:#9a9aab;--border:#23233a}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  /* NAV */
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+  .logo svg{width:28px;height:28px}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+  .nav-links a:hover{color:var(--text)}
+  .btn{padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;border:none;cursor:pointer;transition:.2s}
+  .btn-primary{background:var(--emerald);color:#06121a}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(16,185,129,.25)}
+  .btn-outline{background:transparent;color:var(--text);border:1.5px solid var(--border)}
+  .btn-outline:hover{border-color:var(--purple)}
+  .btn-lg{padding:16px 36px;font-size:17px}
+  /* HERO */
+  .hero{padding:80px 0 60px;text-align:center}
+  .hero h1{font-size:46px;line-height:1.15;font-weight:800;max-width:780px;margin:0 auto 18px}
+  .hero h1 span{color:var(--purple)}
+  .hero .sub{font-size:19px;color:var(--muted);max-width:640px;margin:0 auto 36px}
+  .hero .price{font-size:16px;color:var(--muted);margin-top:16px}
+  .hero .price b{color:var(--emerald);font-size:22px}
+  .sample{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;max-width:680px;margin:48px auto 0;text-align:left}
+  .sample h3{font-size:14px;color:var(--emerald);letter-spacing:.5px;margin-bottom:14px}
+  .sample .row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:1px solid var(--border);font-size:15px}
+  .sample .row:last-child{border-bottom:none}
+  .sample .mono{font-weight:700}
+  /* FEATURES */
+  .features{padding:70px 0}
+  .features h2{font-size:32px;text-align:center;margin-bottom:44px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.2s}
+  .card:hover{border-color:var(--purple);transform:translateY(-3px)}
+  .card svg{width:34px;height:34px;margin-bottom:16px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14.5px}
+  /* PRICING */
+  .pricing{padding:70px 0;text-align:center}
+  .pricing h2{font-size:32px;margin-bottom:12px}
+  .pricing .lead{color:var(--muted);margin-bottom:40px}
+  .plans{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+  .plan{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;width:300px;text-align:left;position:relative}
+  .plan.pop{border-color:var(--purple);box-shadow:0 0 0 1px var(--purple),0 20px 60px rgba(124,58,237,.15)}
+  .plan .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px}
+  .plan h3{font-size:20px;margin-bottom:6px}
+  .plan .amt{font-size:38px;font-weight:800;margin:10px 0}
+  .plan .amt span{font-size:15px;color:var(--muted);font-weight:500}
+  .plan ul{list-style:none;margin:20px 0}
+  .plan li{padding:7px 0;font-size:14.5px;color:var(--muted);display:flex;gap:10px;align-items:flex-start}
+  .plan li svg{width:18px;height:18px;flex-shrink:0;margin-top:2px}
+  .plan .btn{width:100%;text-align:center}
+  /* FOOTER */
+  footer{border-top:1px solid var(--border);padding:36px 0;text-align:center;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--muted)}
+  @media(max-width:700px){.hero h1{font-size:34px}.hero{padding:50px 0 40px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <div class="logo">
+    <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l2.5 8.5L27 15l-8.5 2.5L16 26l-2.5-8.5L5 15l8.5-2.5L16 4z" fill="#10b981"/><circle cx="16" cy="15" r="3" fill="#0a0a0f"/></svg>
+    Iowa Grain Feed
+  </div>
+  <div class="nav-links">
+    <a href="#how">How it works</a>
+    <a href="#pricing">Pricing</a>
+    <a href="mailto:creeklava@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<section class="hero wrap">
+  <h1>Your local elevator bid, <span>every morning at 6AM.</span></h1>
+  <p class="sub">The official USDA Iowa daily cash grain report — real regional basis, delivery windows, and futures — delivered to your inbox before you start your day.</p>
+  <a href="https://checkout.stripe.com/c/pay/cs_live_b1wFVxKrC0EJlBOv1zu01grv8B1fHg2mlmU08zJQ8Ylju8crEHRKjCiuXs" class="btn btn-primary btn-lg">Start 7-Day Free Trial</a>
+  <p class="price"><b>$19</b> /month after trial · cancel anytime</p>
+
+  <div class="sample">
+    <h3>YOUR MORNING BRIEF — AUGUST 24, 2026</h3>
+    <div class="row"><span>Corn (Chicago futures)</span><span class="mono">$5.19 <span style="color:var(--emerald)">▲ +0.40</span></span></div>
+    <div class="row"><span>Soybeans (Chicago futures)</span><span class="mono">$12.24 <span style="color:var(--emerald)">▲ +0.04</span></span></div>
+    <div class="row"><span>Iowa state avg cash — corn</span><span class="mono">$4.59</span></div>
+    <div class="row"><span>Iowa state avg cash — soybeans</span><span class="mono">$11.94</span></div>
+    <div class="row"><span>SE Iowa basis (corn)</span><span class="mono" style="color:#f87171">-40c vs Chicago</span></div>
+    <div class="row"><span>Delivery window</span><span class="mono">DLVD-T Current · FOMCO +$0.03</span></div>
+    <div class="row"><span>Year-ago corn</span><span class="mono">$3.58</span></div>
+  </div>
+</section>
+
+<section class="features wrap" id="how">
+  <h2>What you get every morning</h2>
+  <div class="grid">
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>Real Iowa basis</h3>
+      <p>The official USDA report by region — not just national futures. Know what your region actually pays.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 20v-8M6 20v-4M18 20v-12"/><rect x="2" y="3" width="20" height="18" rx="2"/></svg>
+      <h3>Futures + cash + trend</h3>
+      <p>Corn, soybeans, and wheat with change vs yesterday and a 30-day trend line.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+      <h3>Delivery-window alerts</h3>
+      <p>FIFO vs FOMCO delivery warnings — the difference can be $30-50 per load.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+      <h3>Target-price alerts</h3>
+      <p>Set a sell floor or buy ceiling. We email you the moment it hits — once, not spam.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg>
+      <h3>Email + JSON feed</h3>
+      <p>Read the brief in your inbox or pull the data into your spreadsheet via API.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 22c5-4 8-8 8-12a8 8 0 1 0-16 0c0 4 3 8 8 12z"/><path d="M12 10a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/></svg>
+      <h3>Source-attributed data</h3>
+      <p>Every number comes from USDA AMS with source + timestamp. No guesswork, no unverified quotes.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing wrap" id="pricing">
+  <h2>Simple, honest pricing</h2>
+  <p class="lead">One price. No contracts. Cancel anytime.</p>
+  <div class="plans">
+    <div class="plan pop">
+      <div class="tag">MOST POPULAR</div>
+      <h3>Grain Feed</h3>
+      <div class="amt">$19<span>/month</span></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Daily 6AM market brief</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Iowa cash bids + basis by region</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Delivery-window warnings</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Target-price email alerts</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>30-day trend + JSON/CSV export</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>7-day free trial · cancel anytime</li>
+      </ul>
+      <a href="https://checkout.stripe.com/c/pay/cs_live_b1wFVxKrC0EJlBOv1zu01grv8B1fHg2mlmU08zJQ8Ylju8crEHRKjCiuXs" class="btn btn-primary">Start Free Trial</a>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>Young Grasshopper LLC · 3229 Whispering Willow Lane, Danville, IA 52623</p>
+  <p style="margin-top:8px">Market data is educational information, not trading or financial advice. Data source: USDA AMS Market News (public data).</p>
+  <p style="margin-top:8px"><a href="mailto:creeklava@gmail.com">Contact</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+</body>
+</html>

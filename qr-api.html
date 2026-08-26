@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>QR Code Generation API — Fast, Reliable, on RapidAPI</title>
+<meta name="description" content="QR code generation API: PNG/SVG/JPEG, colors, logo overlay, error-correction, batch. Free tier to try, $9/mo to use. RapidAPI marketplace.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a0a0f;--card:#12121a;--purple:#7c3aed;--emerald:#10b981;--text:#e8e8ef;--muted:#9a9aab;--border:#23233a}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+  .logo svg{width:28px;height:28px}
+  .nav-links{display:flex;gap:24px;align-items:center}
+  .nav-links a{color:var(--muted);text-decoration:none;font-size:14px;font-weight:500}
+  .btn{padding:12px 26px;border-radius:10px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;border:none;cursor:pointer;transition:.2s}
+  .btn-primary{background:var(--purple);color:#fff}
+  .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(124,58,237,.3)}
+  .btn-lg{padding:16px 36px;font-size:17px}
+  .hero{padding:80px 0 60px;text-align:center}
+  .hero h1{font-size:46px;line-height:1.15;font-weight:800;max-width:760px;margin:0 auto 18px}
+  .hero h1 span{color:var(--purple)}
+  .hero .sub{font-size:19px;color:var(--muted);max-width:620px;margin:0 auto 30px}
+  .code{background:var(--card);border:1px solid var(--border);border-radius:12px;padding:22px;max-width:680px;margin:0 auto;text-align:left;font-family:ui-monospace,monospace;font-size:13.5px;color:var(--muted);overflow-x:auto}
+  .code .hl{color:var(--emerald)}
+  .code .p{color:var(--purple)}
+  .features{padding:70px 0}
+  .features h2{font-size:32px;text-align:center;margin-bottom:44px}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:28px;transition:.2s}
+  .card:hover{border-color:var(--purple);transform:translateY(-3px)}
+  .card svg{width:34px;height:34px;margin-bottom:16px}
+  .card h3{font-size:18px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14.5px}
+  .pricing{padding:70px 0;text-align:center}
+  .pricing h2{font-size:32px;margin-bottom:12px}
+  .pricing .lead{color:var(--muted);margin-bottom:40px}
+  .plans{display:flex;gap:24px;justify-content:center;flex-wrap:wrap}
+  .plan{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;width:280px;text-align:left;position:relative}
+  .plan.pop{border-color:var(--purple);box-shadow:0 0 0 1px var(--purple)}
+  .plan .tag{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--purple);color:#fff;font-size:12px;font-weight:700;padding:5px 14px;border-radius:20px}
+  .plan h3{font-size:20px;margin-bottom:6px}
+  .plan .amt{font-size:38px;font-weight:800;margin:10px 0}
+  .plan .amt span{font-size:15px;color:var(--muted);font-weight:500}
+  .plan ul{list-style:none;margin:20px 0}
+  .plan li{padding:7px 0;font-size:14.5px;color:var(--muted);display:flex;gap:10px}
+  .plan li svg{width:18px;height:18px;flex-shrink:0;margin-top:2px}
+  .plan .btn{width:100%;text-align:center}
+  footer{border-top:1px solid var(--border);padding:36px 0;text-align:center;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--muted)}
+  @media(max-width:700px){.hero h1{font-size:34px}.hero{padding:50px 0 40px}.nav-links{display:none}}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <div class="logo">
+    <svg viewBox="0 0 32 32" fill="none"><rect x="4" y="4" width="10" height="10" rx="2" fill="#7c3aed"/><rect x="18" y="4" width="10" height="10" rx="2" fill="#10b981"/><rect x="4" y="18" width="10" height="10" rx="2" fill="#10b981"/><rect x="18" y="18" width="4" height="4" fill="#7c3aed"/><rect x="24" y="18" width="4" height="4" fill="#7c3aed"/><rect x="18" y="24" width="4" height="4" fill="#7c3aed"/><rect x="24" y="24" width="4" height="4" fill="#7c3aed"/></svg>
+    QR API
+  </div>
+  <div class="nav-links">
+    <a href="#docs">Quick start</a>
+    <a href="#pricing">Pricing</a>
+    <a href="mailto:creeklava@gmail.com">Contact</a>
+  </div>
+</nav>
+
+<section class="hero wrap">
+  <h1>Generate QR codes <span>in one API call.</span></h1>
+  <p class="sub">PNG, SVG, or JPEG. Custom colors, logo overlay, error-correction levels, batch generation. Reliable, fast, and cheap — on the RapidAPI marketplace.</p>
+  <a href="https://checkout.stripe.com/c/pay/cs_live_b1rhsXmHRZSnCAWJPzi66G3KBQLlUJA7rPnTlo09fCGHWuq3c64Pgr3qAM" class="btn btn-primary btn-lg">Subscribe $9/mo</a>
+  <p style="color:var(--muted);font-size:14px;margin-top:14px">50 free calls/month on the free tier · no card required</p>
+
+  <div class="code" style="margin-top:36px">
+<span class="p">POST</span> /v1/qr/generate<br>
+<span class="hl">{</span><br>
+&nbsp;&nbsp;"text": <span class="hl">"https://younggrasshopper.io"</span>,<br>
+&nbsp;&nbsp;"size": <span class="hl">512</span>,<br>
+&nbsp;&nbsp;"format": <span class="hl">"png"</span>,<br>
+&nbsp;&nbsp;"color": <span class="hl">"7c3aed"</span>,<br>
+&nbsp;&nbsp;"background": <span class="hl">"0a0a0f"</span><br>
+<span class="hl">}</span><br>
+<br>
+<span class="hl">→</span> <span class="hl">{</span> "format": "png", "image_base64": "...", "checksum": "...", "timestamp": 123 <span class="hl">}</span>
+  </div>
+</section>
+
+<section class="features wrap" id="docs">
+  <h2>What you get</h2>
+  <div class="grid">
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3zM20 14h1M14 20h1M20 20h1"/></svg>
+      <h3>PNG · SVG · JPEG</h3>
+      <p>Pick your format per call. SVG for vector needs, PNG/JPEG for images.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 3a9 9 0 0 1 9 9"/><path d="M12 12l4-2"/></svg>
+      <h3>Custom colors + logo</h3>
+      <p>Brand your QR with your colors and drop a logo in the center.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M4 17l5-5 4 4 7-7"/><path d="M14 7h6v6"/></svg>
+      <h3>Error correction L/M/Q/H</h3>
+      <p>Choose how much damage a QR survives — H for logos and wear.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M8 12h8M12 8v8"/></svg>
+      <h3>Batch generation</h3>
+      <p>Up to 10 QR codes in one call. Built for product lines and menus.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg>
+      <h3>99%+ uptime</h3>
+      <p>Health-checked, auto-restarting. Boring and dependable by design.</p>
+    </div>
+    <div class="card">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M12 22c5-4 8-8 8-12a8 8 0 1 0-16 0c0 4 3 8 8 12z"/></svg>
+      <h3>RapidAPI managed</h3>
+      <p>Billing, keys, and docs handled by RapidAPI. You just call the URL.</p>
+    </div>
+  </div>
+</section>
+
+<section class="pricing wrap" id="pricing">
+  <h2>Simple usage pricing</h2>
+  <p class="lead">Free to start. Pay when you scale.</p>
+  <div class="plans">
+    <div class="plan">
+      <h3>Free</h3>
+      <div class="amt">$0<span>/mo</span></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>50 calls/month</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>All formats</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>No card required</li>
+      </ul>
+    </div>
+    <div class="plan pop">
+      <div class="tag">RECOMMENDED</div>
+      <h3>Standard</h3>
+      <div class="amt">$9<span>/mo</span></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>1,000 calls/month</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Batch + logo overlay</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Overage $0.002/call</li>
+      </ul>
+      <a href="https://checkout.stripe.com/c/pay/cs_live_b1rhsXmHRZSnCAWJPzi66G3KBQLlUJA7rPnTlo09fCGHWuq3c64Pgr3qAM" class="btn btn-primary">Subscribe $9/mo</a>
+    </div>
+    <div class="plan">
+      <h3>Pro</h3>
+      <div class="amt">$19<span>/mo</span></div>
+      <ul>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>10,000 calls/month</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Priority support</li>
+        <li><svg viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="3"><path d="M20 6L9 17l-5-5"/></svg>Overage $0.001/call</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer class="wrap">
+  <p>Young Grasshopper LLC · 3229 Whispering Willow Lane, Danville, IA 52623</p>
+  <p style="margin-top:8px">Billing handled by Stripe. API served via RapidAPI marketplace.</p>
+  <p style="margin-top:8px"><a href="mailto:creeklava@gmail.com">Contact</a> · <a href="#">Privacy</a> · <a href="#">Terms</a></p>
+</footer>
+</body>
+</html>
