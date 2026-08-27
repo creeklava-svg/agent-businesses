@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Young Grasshopper — Agent-Run Tools</title>
+<meta name="description" content="Iowa Grain Market Feed, QR Code Generation API, and the Iowa Ag Markets Newsletter — built and operated by AI, for Iowa and beyond.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{--navy:#0a0a0f;--card:#12121a;--purple:#7c3aed;--emerald:#10b981;--text:#e8e8ef;--muted:#9a9aab;--border:#23233a}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter',system-ui,sans-serif;background:var(--navy);color:var(--text);line-height:1.6}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:20px 0;border-bottom:1px solid var(--border)}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:18px}
+  .logo svg{width:28px;height:28px}
+  .hero{padding:70px 0 50px;text-align:center}
+  .hero h1{font-size:42px;line-height:1.15;font-weight:800;max-width:760px;margin:0 auto 16px}
+  .hero h1 span{color:var(--purple)}
+  .hero .sub{font-size:18px;color:var(--muted);max-width:640px;margin:0 auto}
+  .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:24px;padding:30px 0 70px}
+  .card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:32px;text-decoration:none;color:inherit;transition:.2s;display:flex;flex-direction:column}
+  .card:hover{border-color:var(--purple);transform:translateY(-4px);box-shadow:0 20px 50px rgba(124,58,237,.12)}
+  .card .icon{width:48px;height:48px;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:18px}
+  .card h2{font-size:20px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:14.5px;flex:1}
+  .card .price{color:var(--emerald);font-weight:700;margin-top:18px;font-size:15px}
+  footer{border-top:1px solid var(--border);padding:36px 0;text-align:center;color:var(--muted);font-size:13.5px}
+  footer a{color:var(--muted)}
+</style>
+</head>
+<body>
+<nav class="wrap">
+  <div class="logo">
+    <svg viewBox="0 0 32 32" fill="none"><path d="M16 4l2.5 8.5L27 15l-8.5 2.5L16 26l-2.5-8.5L5 15l8.5-2.5L16 4z" fill="#7c3aed"/><circle cx="16" cy="15" r="3" fill="#0a0a0f"/></svg>
+    Young Grasshopper Tools
+  </div>
+</nav>
+
+<section class="hero wrap">
+  <h1>Agent-run tools for <span>Iowa agriculture</span> and beyond.</h1>
+  <p class="sub">Three products built and operated by AI — real data, real payments, zero babysitting.</p>
+</section>
+
+<div class="wrap grid">
+  <a class="card" href="grain-feed.html">
+    <div class="icon" style="background:rgba(16,185,129,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6l8-4z"/><path d="M9 12l2 2 4-4"/></svg></div>
+    <h2>Iowa Grain Market Feed</h2>
+    <p>Your local elevator bid, every morning at 6AM. Real USDA Iowa basis by region, delivery windows, target-price alerts.</p>
+    <div class="price">$19/mo · 7-day free trial</div>
+  </a>
+  <a class="card" href="qr-api.html">
+    <div class="icon" style="background:rgba(124,58,237,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#7c3aed" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><path d="M14 14h3v3h-3z"/></svg></div>
+    <h2>QR Code Generation API</h2>
+    <p>Generate QR codes in one call — PNG/SVG/JPEG, custom colors, logo overlay, batch. Fast and dependable.</p>
+    <div class="price">$9/mo · key by email</div>
+  </a>
+  <a class="card" href="ag-newsletter.html">
+    <div class="icon" style="background:rgba(245,158,11,.12)"><svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#f59e0b" stroke-width="2"><path d="M21 8v13H3V8M1 3h22v5H1zM10 12h4"/></svg></div>
+    <h2>Iowa Ag Markets Newsletter</h2>
+    <p>The daily AI-written briefing — grain, weather, policy. Sourced from USDA and Iowa ag news, in your inbox at 6AM.</p>
+    <div class="price">$7/mo · cancel anytime</div>
+  </a>
+</div>
+
+<footer class="wrap">
+  <p>Young Grasshopper LLC · 3229 Whispering Willow Lane, Danville, IA 52623</p>
+  <p style="margin-top:8px">Market data is educational information, not trading or financial advice.</p>
+  <p style="margin-top:8px"><a href="mailto:creeklava@gmail.com">Contact</a></p>
+</footer>
+</body>
+</html>
